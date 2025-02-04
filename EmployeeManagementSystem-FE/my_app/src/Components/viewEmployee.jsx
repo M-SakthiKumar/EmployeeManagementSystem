@@ -1,38 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';  // useParams to get the 'id' from the URL
-import EmployeesService from '../Service/EmployeesService';  // Ensure EmployeesService is imported correctly
+import { Link, useParams } from 'react-router-dom';  
+import EmployeesService from '../Service/EmployeesService';  
 
 const ViewEmployee = () => {
-  const { id } = useParams();  // Get 'id' from the URL params
+  const { id } = useParams();  
   const [employee, setEmployee] = useState(null);
 
   useEffect(() => {
     // Fetch employee data based on the 'id'
     EmployeesService.getEmployeebyId(id)
       .then(response => {
-        setEmployee(response.data);  // Store the employee data in state
+        setEmployee(response.data);  
       })
       .catch(error => {
-        console.error('Error fetching employee:', error);  // Handle any errors
+        console.error('Error fetching employee:', error);  
       });
   }, [id]);  // Re-run effect when 'id' changes
 
   return (
-    // <div>
-    //   {employee ? (
-    //     <div>
-    //       <h1>Employee Details</h1>
-    //       <p><strong>Name:</strong> {employee.name}</p>
-    //       <p><strong>Email:</strong> {employee.emailId}</p>
-    //       <p><strong>Contact:</strong> {employee.contact}</p>
-    //       <p><strong>Department:</strong> {employee.department}</p>
-    //       <p><strong>Designation:</strong> {employee.designation}</p>
-    //     </div>
-    //   ) : (
-    //     <p>Loading...</p>  // Display loading message while fetching data
-    //   )}
-    // </div>
-
     <>
         <div className="container  mt-5">
       {employee ? (
