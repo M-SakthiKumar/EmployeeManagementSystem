@@ -12,7 +12,7 @@ const ListEmployees = () => {
             console.log(response.data);    
         })
         .catch((error) => {
-            console.error('Error fetching employees:', error);  // Log any error during fetch
+            console.error('Error fetching employees:', error);  
         });
     }
     useEffect(() => {
