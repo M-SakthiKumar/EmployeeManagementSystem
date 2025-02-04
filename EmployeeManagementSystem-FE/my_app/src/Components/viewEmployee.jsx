@@ -15,7 +15,7 @@ const ViewEmployee = () => {
       .catch(error => {
         console.error('Error fetching employee:', error);  
       });
-  }, [id]);  // Re-run effect when 'id' changes
+  }, [id]);  
 
   return (
     <>
