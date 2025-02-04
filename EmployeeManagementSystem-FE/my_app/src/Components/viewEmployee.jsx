@@ -44,7 +44,7 @@ const ViewEmployee = () => {
         </div>
       ) : (
         <div className="text-center">
-          <p>Loading...</p>  {/* Display loading message while fetching data */}
+          <p>Loading...</p>  
         </div>
       )}
     </div>
